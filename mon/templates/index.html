@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Monitor</title>
+    <script>
+        function refreshPage() {
+            setTimeout(function() {
+                location.reload();
+            }, 2000);
+        }
+        window.onload = refreshPage;
+    </script>
+</head>
+<body>
+    <h1>System Monitor</h1>
+    <p>호스트: {{ host }} | IP 주소: {{ ip_address }} | 현재 시간: {{ current_time }}</p>
+    <p>CPU 사용률: {{ cpu_usage }}%</p>
+    <p>메모리 사용률: {{ memory_usage }}%</p>
+    <p>디스크 사용률: {{ disk_usage }}%</p>
+    <p>네트워크 응답시간: {{ network_response_time }}ms</p>
+</body>
+</html>
