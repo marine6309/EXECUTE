@@ -1,3 +1,6 @@
+# NAME : PC TIME USAGE TOOL
+# 2024/05/24 - 일별 사용시간 그래프 표시
+
 import win32evtlog
 import csv
 from datetime import datetime, timedelta
@@ -112,10 +115,10 @@ if __name__ == "__main__":
     event_ids = [6005, 6006]  # Event IDs for system startup (6005) and shutdown (6006)
 
     logs = get_event_logs(server, logtype)
-    # print("Number of events read:", len(logs))
+    print("Number of events read:", len(logs))
 
     filtered_logs = filter_events(logs, event_ids)
-    # print("Number of filtered events:", len(filtered_logs))
+    print("Number of filtered events:", len(filtered_logs))
     
     if filtered_logs:
         usage_times = calculate_usage_times(filtered_logs)
@@ -131,5 +134,8 @@ if __name__ == "__main__":
             formatted_hours = format_hours_to_hhmm(hours)
             graph = generate_usage_graph(hours)
             print(f"{date}: {formatted_hours} [{graph:<15}]")
+        
+        print()  # 한 줄 띄우기
+        input("Press Enter to exit...")
     else:
         print("No events to save.")
