@@ -148,7 +148,7 @@ if __name__ == "__main__":
             graph = generate_usage_graph(hours)
             print(f"{date}: {formatted_hours} [{graph:<14}]")
         
-        print()  # 한 줄 띄우기
-        input("Press Enter to exit...")
+        # print()  # 한 줄 띄우기
+        # input("Press Enter to exit...")
     else:
         print("No events to save.")
